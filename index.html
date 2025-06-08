@@ -1,54 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mon projet IA & Quantique</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoreAccess AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #0e1d38;
-      color: #f0f0f0;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0d1117;
+      color: #f0f6fc;
+      scroll-behavior: smooth;
     }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
+    nav {
+      background: #161b22;
+      padding: 15px 30px;
+      display: flex;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    h1 {
-      color: #4fc3f7;
-      font-size: 2.5em;
+    nav a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #1f6feb;
     }
     section {
-      max-width: 700px;
-      margin: auto;
-      background: #1a2b4c;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #00000055;
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    section:nth-of-type(2) {
+      animation-delay: 0.2s;
+    }
+    section:nth-of-type(3) {
+      animation-delay: 0.4s;
+    }
+    section:nth-of-type(4) {
+      animation-delay: 0.6s;
+    }
+    h1, h2 {
+      color: #58a6ff;
     }
     footer {
       text-align: center;
-      margin-top: 60px;
-      color: #888;
+      padding: 40px 0;
       font-size: 0.9em;
+      color: #8b949e;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Bienvenue sur CoreAccess</h1>
-    <p>Une vitrine de données pour l’intelligence artificielle et les modèles quantiques</p>
-  </header>
+  <nav>
+    <a href="#coreaccess">CoreAccess AI</a>
+    <a href="#data">Data Segment</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About Us</a>
+  </nav>
 
-  <section>
-    <h2>À propos</h2>
-    <p>CoreAccess is a technological project whose mission is to collect, structure, and enhance various data across several innovative fields such as renewable energy, space satellites, applied AI, and more. It aims to feed artificial intelligence and quantum learning models in order to anticipate future applications such as space tourism, new energy solutions, and climate research.
-</p>
+  <section id="coreaccess">
+    <h1>CoreAccess AI</h1>
+    <p>Plateforme dédiée à l’exploitation intelligente des données pour les technologies IA et quantiques.</p>
+  </section>
+
+  <section id="data">
+    <h2>Data Segment</h2>
+    <p>Accès à des ensembles de données sectorielles : énergie renouvelable, géospatiale, climat et infrastructure IA.</p>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <p>Plans d’accès gratuits pour les chercheurs et modulables pour les entreprises — détails à venir.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>CoreAccess is a technological project whose mission is to collect, structure, and enhance various data across several innovative fields such as renewable energy, space satellites, applied AI, and more. It aims to feed artificial intelligence and quantum learning models in order to anticipate future applications such as space tourism, new energy solutions, and climate research.</p>
   </section>
 
   <footer>
-    <p>© 2025 CoreAccess – par Yanis Mendeng</p>
+    <p>© 2025 CoreAccess – Designed by Yanis Mendeng</p>
   </footer>
 </body>
 </html>
