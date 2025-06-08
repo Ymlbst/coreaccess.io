@@ -1,99 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>CoreAccess AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoreAccess AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #111722;
-      color: #eaf3fb;
-      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #171f2d;
-      padding: 32px 0 16px 0;
-      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      background: #0d1117;
+      color: #f0f6fc;
+      scroll-behavior: smooth;
     }
     nav {
+      background: #161b22;
+      padding: 15px 30px;
       display: flex;
-      justify-content: center;
-      gap: 32px;
-      padding-bottom: 24px;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     nav a {
       color: #58a6ff;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1em;
-      transition: color 0.2s;
+      transition: color 0.3s;
     }
     nav a:hover {
-      color: #21c8ff;
-    }
-    .container {
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 32px 20px 0 20px;
-    }
-    h1 {
-      color: #70b8ff;
-      font-size: 2.8em;
-      margin-bottom: 0.2em;
-      letter-spacing: 2px;
-    }
-    h2 {
-      color: #4aa3ff;
-      font-size: 1.7em;
-      margin-top: 1.5em;
-      margin-bottom: 0.6em;
-      letter-spacing: 1px;
+      color: #1f6feb;
     }
     section {
-      margin-bottom: 36px;
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
     }
-    .subtitle {
-      font-size: 1.1em;
-      color: #a1d6fd;
-      margin-bottom: 2em;
-      font-style: italic;
+    section:nth-of-type(2) {
+      animation-delay: 0.2s;
+    }
+    section:nth-of-type(3) {
+      animation-delay: 0.4s;
+    }
+    section:nth-of-type(4) {
+      animation-delay: 0.6s;
+    }
+    h1, h2 {
+      color: #58a6ff;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.9em;
+      color: #8b949e;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#">CoreAccess AI</a>
-      <a href="#">Data Segment</a>
-      <a href="#">Pricing</a>
-      <a href="#">About Us</a>
-    </nav>
-    <h1>CoreAccess HI</h1>
-    <div class="subtitle">
-      Platform dedicated to the intelligent exploitation of data for AI and quantum technologies.
-    </div>
-  </header>
-  <div class="container">
-    <section>
-      <h2>Data Segment</h2>
-      <p>
-        Access to sectoral data sets: renewable energy, geospatial, climate, and AI infrastructure.
-      </p>
-    </section>
-    <section>
-      <h2>Pricing</h2>
-      <p>
-        Free access plans for researchers and scalable options for businesses – details coming soon.
-      </p>
-    </section>
-    <section>
-      <h2>About Us</h2>
-      <p>
-        CoreAccess is a technological project whose mission is to collect, structure, and enhance various data across several innovative fields such as renewable energy, space satellites, applied AI, and more. It aims to feed artificial intelligence and quantum learning models in order to anticipate future applications such as space tourism, new energy solutions, and climate research.
-      </p>
-    </section>
-  </div>
+  <nav>
+    <a href="#coreaccess">CoreAccess AI</a>
+    <a href="#data">Data Segment</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About Us</a>
+  </nav>
+
+  <section id="coreaccess">
+    <h1>CoreAccess AI</h1>
+    <p>Platform dedicated to the intelligent exploitation of data for AI and quantum technologies.</p>
+  </section>
+
+  <section id="data">
+    <h2>Data Segment</h2>
+    <p>Access to sector-specific datasets: renewable energy, geospatial, climate, and AI infrastructure.</p>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <p>Free access plans for researchers and scalable options for businesses — details coming soon.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>CoreAccess is a technological project whose mission is to collect, structure, and enhance various data across several innovative fields such as renewable energy, space satellites, applied AI, and more. It aims to feed artificial intelligence and quantum learning models in order to anticipate future applications such as space tourism, new energy solutions, and climate research.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 CoreAccess – Designed by Yanis Mendeng</p>
+  </footer>
 </body>
 </html>
+
