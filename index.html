@@ -1,101 +1,252 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoreAccess AI</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: #0d1117;
-      color: #f0f6fc;
-      scroll-behavior: smooth;
-    }
-    nav {
-      background: #161b22;
-      padding: 15px 30px;
-      display: flex;
-      gap: 30px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      color: #58a6ff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #1f6feb;
-    }
-    section {
-      max-width: 800px;
-      margin: 80px auto;
-      padding: 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    section:nth-of-type(2) {
-      animation-delay: 0.2s;
-    }
-    section:nth-of-type(3) {
-      animation-delay: 0.4s;
-    }
-    section:nth-of-type(4) {
-      animation-delay: 0.6s;
-    }
-    h1, h2 {
-      color: #58a6ff;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      font-size: 0.9em;
-      color: #8b949e;
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CoreAccess.io | Intelligence Artificielle & Quantique</title>
+    <style>
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Police style Apple (San Francisco / System UI) */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7; /* Gris très clair Apple */
+            color: #1d1d1f; /* Noir doux Apple */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased; /* Lissage des polices */
+        }
+
+        /* Scroll fluide */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVIGATION (STYLE APPLE) --- */
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 48px; /* Hauteur standard Apple */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+            backdrop-filter: saturate(180%) blur(20px); /* Effet verre dépoli */
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-content {
+            width: 100%;
+            max-width: 980px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #1d1d1f;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 0.85em;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: #0071e3; /* Bleu Apple */
+        }
+
+        /* --- HEADER / HERO SECTION --- */
+        header {
+            text-align: center;
+            padding: 100px 20px 60px;
+            max-width: 800px;
+            margin: auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem; /* Grand titre */
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #86868b; /* Gris moyen */
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #0071e3;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 980px; /* Pilule */
+            text-decoration: none;
+            font-size: 1em;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0077ed;
+            transform: scale(1.02);
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 80px 20px;
+            max-width: 980px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Grille pour les cartes */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards (Cartes) interactives */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px; /* Coins arrondis Apple */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Monte légèrement */
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #86868b;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #f5f5f7;
+            color: #86868b;
+            font-size: 0.8em;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        /* --- ANIMATION --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            header p { font-size: 1.2rem; }
+            .nav-links { display: none; } /* Pour simplifier sur mobile */
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <a href="#coreaccess">CoreAccess AI</a>
-    <a href="#data">Data Segment</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#about">About Us</a>
-  </nav>
 
-  <section id="coreaccess">
-    <h1>CoreAccess AI</h1>
-    <p>Platform dedicated to the intelligent exploitation of data for AI and quantum technologies.</p>
-  </section>
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">coreaccess.io</a>
+            <div class="nav-links">
+                <a href="#about">À propos</a>
+                <a href="#data">Données</a>
+                <a href="#quantum">Quantique</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <section id="data">
-    <h2>Data Segment</h2>
-    <p>Access to sector-specific datasets: renewable energy, geospatial, climate, and AI infrastructure.</p>
-  </section>
+    <header id="about">
+        <h1>L'avenir des modèles IA.</h1>
+        <p>Une base de données unifiée pour l'analyse environnementale et les technologies quantiques.</p>
+        <a href="#data" class="cta-button">Découvrir le projet</a>
+    </header>
 
-  <section id="pricing">
-    <h2>Pricing</h2>
-    <p>Free access plans for researchers and scalable options for businesses — details coming soon.</p>
-  </section>
+    <section id="data">
+        <h2 class="section-title">Domaines d'expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Big Data Climatique</h3>
+                <p>Accumulation massive de données environnementales pour prédire les cycles futurs.</p>
+            </div>
+            <div class="card">
+                <h3 id="quantum">Modèles Quantiques</h3>
+                <p>Recherche de motifs complexes grâce à la puissance de calcul non-binaire.</p>
+            </div>
+            <div class="card">
+                <h3>Énergies Alternatives</h3>
+                <p>Optimisation des secteurs industriels via l'analyse prédictive.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>CoreAccess is a technological project whose mission is to collect, structure, and enhance various data across several innovative fields such as renewable energy, space satellites, applied AI, and more. It aims to feed artificial intelligence and quantum learning models in order to anticipate future applications such as space tourism, new energy solutions, and climate research.</p>
-  </section>
+    <section id="contact" style="background: white; border-radius: 20px; margin-bottom: 40px; text-align: center;">
+        <h2 class="section-title">Rejoindre l'aventure</h2>
+        <p style="color: #86868b; max-width: 600px; margin: auto; margin-bottom: 20px;">
+            CoreAccess monte en maturité. Suivez l'évolution du projet pluriel.
+        </p>
+        <a href="mailto:contact@coreaccess.io" class="cta-button" style="background-color: #1d1d1f;">Me contacter</a>
+    </section>
 
-  <footer>
-    <p>© 2025 CoreAccess – Designed by Yanis Mendeng</p>
-  </footer>
+    <footer>
+        <p>Copyright © 2025 Saint Yanis. Tous droits réservés.</p>
+        <p>CoreAccess.io - Projet Étudiant Maths/Info</p>
+    </footer>
+
+    <script>
+        // Petit script pour rendre le scroll encore plus fluide sur les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
